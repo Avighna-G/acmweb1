@@ -26,10 +26,10 @@ function App() {
     
   return (
 
-    <div className="App">
-      <table className='table table-hover mx-auto m-3 w-75'>
+    <div className='App'>
+      <table className='table table-bordered mx-auto m-4 w-75' >
         <thead>
-        <tr className="p-2 bg-info">
+        <tr className='headt'>
           <th>Name</th>
           <th>Team</th>
           <th>Mail ID</th>
@@ -38,9 +38,9 @@ function App() {
         <tbody>
       
       {
-        data.map((item,ind)=><tr key={ind}><td >{item.Name}</td>
-                                  <td >{item.Team}</td>  
-                                  <td><a href='mailto:${item.Mail}'>{item.Mail}</a></td>
+        data.map((item,ind)=><tr className='rows' key={ind}><td className='p-3' >{item.Name}</td>
+                                  <td className='p-3'>{item.Team}</td>  
+                                  <td className='p-3' ><a className='text-dark' href='mailto:${item.Mail}'>{item.Mail}</a></td>
                             </tr>)
       }
       </tbody>

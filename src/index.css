@@ -7,7 +7,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+table.table-bordered{
+  border: 5px solid #aed4e3;
+}
+.rows:hover{
+  background-color: 
+  #9ecee3;
+}
+.rows{
+  background-color: #c5e1ef;
+}
+
+.headt{
+  background-color: #65c1e8 ;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
