@@ -46,7 +46,7 @@ function App() {
     
   return (
    <div id="bg">
-    <div className='container w-75'>
+    <div className='container'>
       <div className='mx-auto '>
         <h1 className='p-3 text-center text-justify'><i><strong><u>Volunteers</u></strong></i></h1>
         <p className="intro"><i>Volunteers here at ACM are friendly and ready to help any of the member at any instant. Volunteers literally shoulder all the events conducted by ACM and that too with a lot of determination.</i></p>
