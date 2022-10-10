@@ -45,7 +45,7 @@ function App() {
   },[])
     
   return (
-   <div className="App">
+   <div id="bg">
     <div className='container w-75'>
       <div className='mx-auto '>
         <h1 className='p-3 text-center text-justify'><i><strong><u>Volunteers</u></strong></i></h1>
