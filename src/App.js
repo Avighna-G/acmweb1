@@ -46,11 +46,14 @@ function App() {
     
   return (
    <div id="bg">
-    <div className='container'>
-      <div className='mx-auto '>
+    <div className="d-flex flex-column mx-auto w-75">
+      
+      <div>
         <h1 className='p-3 text-center text-justify'><i><strong><u>Volunteers</u></strong></i></h1>
         <p className="intro"><i>Volunteers here at ACM are friendly and ready to help any of the member at any instant. Volunteers literally shoulder all the events conducted by ACM and that too with a lot of determination.</i></p>
-      </div>
+      </div> 
+
+      <div>
       {
         teamDesc.map((desc,ind)=><div>
           <h5 className='text-left'>{desc.Team}</h5>
@@ -58,8 +61,14 @@ function App() {
 
         </div>)
       }
+      </div>
+
+      <div>
       <p className="intro"><i>Whichever team the volunteers are in at the end of the day they help each other support each other and share their workload. Volunteers of ACM are versatile, whatever is the work they do it with utmost dedication. They always look out to each other and are there for each other.</i></p>
-      <table className='table table-bordered mx-auto m-4' >
+      </div>
+
+      <div >
+      <table className='table table-bordered mx-auto m-2' >
         <thead>
         <tr className='headt'>
           <th>Name</th>
@@ -77,8 +86,11 @@ function App() {
       }
       </tbody>
       </table>
+      </div>
+
     </div>
-    </div>
+  </div>
+  
   );
 }
 
