@@ -4,6 +4,7 @@ import React,{useState,useEffect} from 'react'
 function App() {
  
   const [data,setData]=useState([]);
+  const [teamDesc,setTeam]=useState([]);
   const getData=()=>{
     fetch('volunteerList.json'
     ,{
@@ -23,11 +24,42 @@ function App() {
   useEffect(()=>{
     getData()
   },[])
+  const getTeam=()=>{
+    fetch('teamDesc.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        return response.json();
+      })
+      .then(function(myJson) {
+        setTeam(myJson)
+      });
+  }
+  useEffect(()=>{
+    getTeam()
+  },[])
     
   return (
+   <div className="App">
+    <div className='container w-75'>
+      <div className='mx-auto '>
+        <h1 className='p-3 text-center text-justify'><i><strong><u>Volunteers</u></strong></i></h1>
+        <p className="intro"><i>Volunteers here at ACM are friendly and ready to help any of the member at any instant. Volunteers literally shoulder all the events conducted by ACM and that too with a lot of determination.</i></p>
+      </div>
+      {
+        teamDesc.map((desc,ind)=><div>
+          <h5 className='text-left'>{desc.Team}</h5>
+          <p className='intro'>{desc.Desc}</p>
 
-    <div className='App'>
-      <table className='table table-bordered mx-auto m-4 w-75' >
+        </div>)
+      }
+      <p className="intro"><i>Whichever team the volunteers are in at the end of the day they help each other support each other and share their workload. Volunteers of ACM are versatile, whatever is the work they do it with utmost dedication. They always look out to each other and are there for each other.</i></p>
+      <table className='table table-bordered mx-auto m-4' >
         <thead>
         <tr className='headt'>
           <th>Name</th>
@@ -45,6 +77,7 @@ function App() {
       }
       </tbody>
       </table>
+    </div>
     </div>
   );
 }
